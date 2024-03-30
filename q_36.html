@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="inputNum">
+    <button onclick="sumFirstLast()">Sum</button>
+    <p id="res"></p>
+
+    <script>
+        function sumFirstLast(){
+            var number = document.getElementById("inputNum").value;
+            var firstNum = parseInt(number.charAt(0));
+            var lastNum = parseInt(number.charAt(number.length - 1));
+            var sum = firstNum + lastNum;
+
+            document.getElementById("res").innerHTML = "Sum of first and last digit is: " + sum;
+        }
+    </script>
+</body>
+</html>

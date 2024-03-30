@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>current date mm-dd-yyyy</title>
+</head>
+<body>
+    <script>
+        function getCurrentDate(seperator = '-'){
+            const date  = new Date();
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+            const year = date.getFullYear();
+            return `${month}${seperator}${day}${seperator}${year}`;
+        }
+        console.log(getCurrentDate('-'));
+        console.log(getCurrentDate('/'));
+    </script>
+</body>
+</html>

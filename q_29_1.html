@@ -1,0 +1,48 @@
+<!-- i. Monday to Sunday using switch case in JS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Input from number 1 to 7 to get the specific day from the week</h2>
+    <input type="number" id="inputDay" min="1" max="7">
+    <button onclick="getDayWeek()">Get Day</button>
+    <p id="res"></p>
+    <script>
+        function getDayWeek(){
+            var inpDay = parseInt(document.getElementById("inputDay").value);
+            var day;
+
+            switch (inpDay) {
+                case 1:
+                    day = "Monday"
+                    break;
+                case 2:
+                    day = "Tuesday"
+                    break;
+                case 3:
+                    day = "Wednesday"
+                    break;
+                case 4:
+                    day = "Thursday"
+                    break;
+                case 5:
+                    day = "Friday"
+                    break;
+                case 6:
+                    day = "Saturday"
+                    break;
+                case 7:
+                    day = "Sunday"
+                    break;
+                default:
+                    day = "Invalid Input check your input!";
+            }
+            document.getElementById("res").innerText = day;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputNumber">
+    <button onclick="printFibonacci()">Get Series</button>
+    <p id="res"></p>
+    <script>
+        function printFibonacci(){
+               var num = parseInt(document.getElementById("inputNumber").value);
+               var n1 = 0;
+               var n2 = 1;
+               var newNum;
+               var series="";
+               
+               for(let i = 1; i <= num; i++){
+                document.getElementById("res").innerHTML = n1;
+                series += n1 + " ";
+                newNum = n1 + n2;
+                n1 = n2;
+                n2 = newNum;
+               }
+               document.getElementById("res").innerHTML = "Fibonacci series: " + series;
+        }
+    </script>
+</body>
+</html>

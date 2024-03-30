@@ -1,0 +1,30 @@
+<!-- Write to print factorial of given number -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Enter the number to calculate factorial</h3>
+    <input type="number" id="inpNumber">
+    <button onclick="calculateFactorial()">Calculate</button>
+    <p id="res"></p>
+    <script>
+        function calculateFactorial(){
+            var inputNum = parseFloat(document.getElementById("inpNumber").value);
+            var factorial = 1;
+
+            if(inputNum < 0){
+                document.getElementById("res").innerText = "Factorial is not defined for negative numbers";
+                return;
+            }
+            for(var i = 1; i <= inputNum; i++){
+                factorial *= i;
+            }
+            document.getElementById("res").innerText = "Factorial of " + inputNum + " is " + factorial;
+        }
+    </script>
+</body>
+</html>

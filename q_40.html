@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="gettingTime"></p>
+    <script>
+    const currentDate = new Date();
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    
+    function getHourSuffix(hour) {
+        return hour >= 12 ? "PM" : "AM";
+    }
+
+    function formatHour(hour) {
+        if (hour === 0) {
+            return 12;
+        } 
+        else if (hour > 12) {
+            return hour - 12;
+        }
+        else {
+            return hour;
+        }
+    }
+
+    function addLeadingZero(value) {
+        return value < 10 ? "0" + value : value;
+    }
+
+    const dayOfWeek = days[currentDate.getDay()];
+    const hour = formatHour(currentDate.getHours());
+    const minute = addLeadingZero(currentDate.getMinutes());
+    const second = addLeadingZero(currentDate.getSeconds());
+    const suffix = getHourSuffix(currentDate.getHours());
+    const output = `Today is ${dayOfWeek}. Current Time is ${hour} ${suffix} : ${hour} : ${minute} : ${second}`;
+
+    document.getElementById("gettingTime").innerHTML = output;
+    </script>
+</body>
+</html>

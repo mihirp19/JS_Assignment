@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="first number" id="number1">
+    <input type="text" placeholder="second number" id="number2">
+    <h2 id="res"></h2>
+    <button onclick="add()">Add</button>
+    <button onclick="sub()">sub</button>
+    <button onclick="divi()">divi</button>
+    <button onclick="mul()">mul</button>
+
+    <script>
+        num1 = document.getElementById("number1")
+        num2 = document.getElementById("number2")
+
+        function add() {
+            result = parseFloat(num1.value) + parseInt(num2.value)
+            console.log(result)
+            document.getElementById("res").innerHTML = result;
+        }
+        function sub()
+        {
+            result = parseInt(num1.value) - parseInt(num2.value)
+            console.log(result)
+            document.getElementById("res").innerHTML = result;
+        }
+        function divi()
+        {
+            result = parseInt(num1.value) / parseInt(num2.value)
+            console.log(result)
+            document.getElementById("res").innerHTML = result;
+        }
+        function mul()
+        {
+            result = parseInt(num1.value) * parseInt(num2.value)
+            console.log(result)
+            document.getElementById("res").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

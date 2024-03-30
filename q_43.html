@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Array Objects to CSV</title>
+</head>
+<body>
+    <script>
+        function convertArrayOfObjectsToCSV(array) {
+            let result = '';
+            if (array.length === 0) return result;
+
+            const headers = Object.keys(array[0]);
+            result += headers.join(',') + '\n';
+
+            array.forEach(obj => {
+                const row = headers.map(header => {
+                    let field = obj[header];
+                    field = typeof field === 'string' ? `"${field}"` : field;
+                    return field;
+                }).join(',');
+            result += row + '\n';
+    });
+    return result;
+}
+    const data = [
+        { name: 'John', age: 30, city: 'New York' },
+        { name: 'Jane', age: 25, city: 'Los Angeles' },
+        { name: 'Doe', age: 35, city: 'Chicago' }
+    ];
+    const csvString = convertArrayOfObjectsToCSV(data);
+    console.log(csvString);
+    </script>
+</body>
+</html>

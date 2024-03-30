@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find length of string without library function</title>
+</head>
+<body>
+    <script>
+        function stringLength(){
+            let count = 0;
+            for(let char of string){
+                count++;
+            }
+            return count;
+        }
+        const string = "Hello World";
+        const length = stringLength(string);
+        console.log(string);
+        console.log(length);
+    </script>
+</body>
+</html>

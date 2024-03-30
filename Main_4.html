@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="num1" id="num1"><br>
+    <input type="text" placeholder="num2" id="num2">
+    <h2 id="res"></h2>
+    <button onclick="Add()">Add</button>
+    <button onclick="Sub()">Sub</button>
+    <button onclick="Multiply()">Multiply</button>
+    <button onclick="Divide()">Divide</button>
+
+    <script>
+        var n1 = document.getElementById("num1");
+        var n2 = document.getElementById("num2");
+        var result = document.getElementById("res");
+
+        function Add(){
+            result = parseFloat(n1.value) + parseFloat(n2.value);
+            document.getElementById("res").innerHTML = result;
+        }
+        function Sub(){
+            result = parseFloat(n1.value) - parseFloat(n2.value);
+            document.getElementById("res").innerHTML = result;
+        }
+        function Multiply(){
+            result = parseFloat(n1.value) * parseFloat(n2.value);
+            document.getElementById("res").innerHTML = result;
+        }
+        function Divide(){
+            result = parseFloat(n1.value) / parseFloat(n2.value);
+            document.getElementById("res").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

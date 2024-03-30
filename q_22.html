@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputNum" type="number">
+    <button id="check" onclick="checkPositive()">Check</button>
+    <p id="res"></p>
+    <script>
+        function checkPositive(){
+            var numCheck = document.getElementById("inputNum").value;
+
+            if(numCheck > 0){
+                document.getElementById("res").innerText = "The number is positive";
+            }
+            else{
+                document.getElementById("res").innerText = "The number is negative";
+            }
+        }
+    </script>
+</body>
+</html>

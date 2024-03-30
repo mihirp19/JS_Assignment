@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <input type="text" id="num3">
+    <button onclick="checkPalindrome()">Check Palindrome</button>
+    <p id="res"></p>
+
+    <script>
+        function isPalindrome(num){
+            const strNum = num.toString();
+            const reversedStrNum = strNum.split('').reverse().join('');
+            return strNum === reversedStrNum;
+        }
+
+        function checkPalindrome(){
+            let result = document.getElementById("res");
+            result.innerHTML = "";
+
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+            let num3 = parseInt(document.getElementById("num3").value);
+
+            let count = 0;
+            while(count < 3){
+                let num;
+                switch(count){
+                    case 0:
+                        num = num1;
+                        break;
+                    case 1:
+                        num = num2;
+                        break;
+                    case 2:
+                        num = num3;
+                        break;
+                }
+                if (!isNaN(num)){
+                    if (isPalindrome(num)) {
+                        result.innerHTML += `${num} is a palindrome.<br>`;
+                    }
+                else {
+                    result.innerHTML += `${num} is not a palindrome.<br>`;
+                }
+            }
+            else {
+                result.innerHTML += `Please enter a valid number for number ${count + 1}.<br>`;
+            }
+            count++;
+            }
+        }
+    </script>
+</body>
+</html>

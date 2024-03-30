@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare 2 objects</title>
+</head>
+<body>
+    <script>
+        // Define two sample objects
+        const obj1 = {
+        a: 1,
+        b: 2,
+        c: 3
+        };
+
+        const obj2 = {
+        a: 1,
+        b: 2,
+        c: 4
+        };
+
+        // Function to compare two objects
+        function compareObjects(obj1, obj2) {
+        // Get the keys of both objects
+        const keys1 = Object.keys(obj1);
+        const keys2 = Object.keys(obj2);
+
+        // Check if the number of keys is the same
+        if (keys1.length !== keys2.length) {
+            return false;
+        }
+
+        // Check if all keys in obj1 exist in obj2 and have the same value
+        for (let key of keys1) {
+            if (obj1[key] !== obj2[key]) {
+            return false;
+            }
+        }
+
+        // If all checks passed, objects are equal
+        return true;
+        }
+
+        // Compare obj1 and obj2
+        const isEqual = compareObjects(obj1, obj2);
+
+        // Print the result
+        if (isEqual) {
+        console.log("Objects are equal.");
+        } else {
+        console.log("Objects are not equal.");
+        }
+    </script>
+</body>
+</html>

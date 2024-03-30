@@ -1,0 +1,46 @@
+<!-- question 12
+convert days to years and years to days -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Years and Days Converter</title>
+</head>
+<body>
+    <h1>Years and Days Converter</h1>
+    <p>Enter a value and select the conversion type:</p>
+    <input type="number" id="value" placeholder="Enter value">
+    <select id="conversionType">
+        <option value="years-to-days">Years to Days</option>
+        <option value="days-to-years">Days to Years</option>
+    </select>
+    <button onclick="convert()">Convert</button>
+    <p id="result"></p>
+
+    <script>
+        function convert() {
+            const value = parseFloat(document.getElementById("value").value);
+            const conversionType = document.getElementById("conversionType").value;
+            let result;
+
+            if (isNaN(value)) {
+                result = "Please enter a valid number.";
+            }
+            else {
+                if (conversionType === "years-to-days") {
+                    result = value * 365;
+                }
+                else if (conversionType === "days-to-years") {
+                    result = value / 365;
+                }
+                else {
+                    result = "Invalid conversion type.";
+                }
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

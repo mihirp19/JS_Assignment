@@ -1,0 +1,26 @@
+<!-- Write to find number is even or odd using ternary operator in JS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="input">
+    <button id="check" onclick="checkOddEven()">Check</button>
+    <p id="res"></p>
+
+    <script>
+        function checkOddEven(){
+            var num = document.getElementById("input").value;
+            if(num % 2 == 0){
+                document.getElementById("res").innerHTML = "The number is even";
+            }
+            else{
+                document.getElementById("res").innerHTML = "The number is odd";
+            }
+        }
+    </script>
+</body>
+</html>
